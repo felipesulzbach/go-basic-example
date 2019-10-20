@@ -1,0 +1,10 @@
+
+Executando diretamente:
+> go run C:\Users\felipe\go\golang-alura\src\hello\hello.go
+
+Gerando um compilado:
+> go build C:\Users\felipe\go\golang-alura\src\hello\hello.go
+> C:\Users\felipe\go\golang-alura\src\hello\hello.exe
+
+Command GIT:
+> git push -u origin master
