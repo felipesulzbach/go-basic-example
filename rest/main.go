@@ -8,25 +8,23 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"rest-api/entity"
-	"rest-api/estrutura"
 	"time"
 
 	"github.com/gorilla/mux"
 )
 
-type Person struct {
+type person struct {
 	ID        string   `json:"id,omitempty"`
 	Firstname string   `json:"firstname,omitempty"`
 	Lastname  string   `json:"lastname,omitempty"`
-	Address   *Address `json:"address,omitempty"`
+	Address   *address `json:"address,omitempty"`
 }
-type Address struct {
+type address struct {
 	City  string `json:"city,omitempty"`
 	State string `json:"state,omitempty"`
 }
 
-var people []Person
+var people []person
 
 func main() {
 	addPerson()
@@ -84,9 +82,9 @@ func addConfigServer() {
 }
 
 func addPerson() {
-	people = append(people, Person{ID: "1", Firstname: "John", Lastname: "Doe", Address: &Address{City: "City X", State: "State X"}})
-	people = append(people, Person{ID: "2", Firstname: "Koko", Lastname: "Doe", Address: &Address{City: "City Z", State: "State Y"}})
-	people = append(people, Person{ID: "3", Firstname: "Francis", Lastname: "Sunday"})
+	people = append(people, person{ID: "1", Firstname: "John", Lastname: "Doe", Address: &address{City: "City X", State: "State X"}})
+	people = append(people, person{ID: "2", Firstname: "Koko", Lastname: "Doe", Address: &address{City: "City Z", State: "State Y"}})
+	people = append(people, person{ID: "3", Firstname: "Francis", Lastname: "Sunday"})
 }
 
 func getPeople(w http.ResponseWriter, r *http.Request) {
@@ -101,12 +99,12 @@ func getPerson(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	json.NewEncoder(w).Encode(&Person{})
+	json.NewEncoder(w).Encode(&person{})
 }
 
 func createPerson(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	var person Person
+	var person person
 	_ = json.NewDecoder(r.Body).Decode(&person)
 	person.ID = params["id"]
 	people = append(people, person)

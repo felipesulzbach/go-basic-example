@@ -1,8 +1,3 @@
-/*
-Para testar executar o seguinte comando no CMD:
-(go run localdoarquivo\arquivo.go)
-> go run hello.go
-*/
 package main
 
 import (

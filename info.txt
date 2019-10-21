@@ -1,0 +1,7 @@
+> go run .\basics-go\main.go
+
+> go run .\rest\main.go
+  - [GET] - http://localhost:8000/contato
+  - [GET] - http://localhost:8000/contato/1
+  - [POST] - http://localhost:8000/contato/3
+  - [DELETE] - http://localhost:8000/contato/3
