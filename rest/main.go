@@ -39,7 +39,7 @@ func addConfigServer() {
 	router := mux.NewRouter()
 	router.HandleFunc("/contato", getPeople).Methods("GET")
 	router.HandleFunc("/contato/{id}", getPerson).Methods("GET")
-	router.HandleFunc("/contato/{id}", createPerson).Methods("POST")
+	router.HandleFunc("/contato", createPerson).Methods("POST")
 	router.HandleFunc("/contato/{id}", deletePerson).Methods("DELETE")
 	http.Handle("/", router)
 
@@ -103,10 +103,8 @@ func getPerson(w http.ResponseWriter, r *http.Request) {
 }
 
 func createPerson(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
 	var person person
 	_ = json.NewDecoder(r.Body).Decode(&person)
-	person.ID = params["id"]
 	people = append(people, person)
 	json.NewEncoder(w).Encode(people)
 }

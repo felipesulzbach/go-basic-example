@@ -25,6 +25,19 @@ Golang basics commands, functions, etc.
 > go run .\rest\main.go
 
   - [GET] - http://localhost:8000/contato
-  - [GET] - http://localhost:8000/contato/1
-  - [POST] - http://localhost:8000/contato/3
+  - [GET] - http://localhost:8000/contato/3
+  - [POST] - http://localhost:8000/contato
+    
+    ```json
+    Body Request:
+    {
+       "ID": 5,
+       "Firstname": "Felipe",
+       "Lastname": "Sulzbach",
+       "Address": {
+           "City": "Seattle",
+    	   "State": "Washington"
+       }
+    }
+    ```
   - [DELETE] - http://localhost:8000/contato/3
