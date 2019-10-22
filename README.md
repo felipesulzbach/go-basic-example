@@ -15,12 +15,12 @@ Golang basics commands, functions, etc.
   > go get -u github.com/gorilla/mux
 
 
-### Testing basic Go Commands
+### Running the application
 
+Basic Go Commands
 > go run .\basics-go\main.go
 
-
-### Testing a simple example of REST web service
+REST web service
 
 > go run .\rest\main.go
 
