@@ -24,9 +24,9 @@ REST web service
 
 > go run .\rest\main.go
 
-  - [GET] - http://localhost:8000/contato
-  - [GET] - http://localhost:8000/contato/3
-  - [POST] - http://localhost:8000/contato
+  - Find all contact: [GET] - http://localhost:8080/contact
+  - Find contact by ID: [GET] - http://localhost:8080/contact/3
+  - Create a new contact: [POST] - http://localhost:8080/contact
     
     ```json
     Body Request:
@@ -40,4 +40,4 @@ REST web service
        }
     }
     ```
-  - [DELETE] - http://localhost:8000/contato/3
+  - Delete a contact: [DELETE] - http://localhost:8080/contact/3
